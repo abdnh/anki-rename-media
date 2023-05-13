@@ -1,0 +1,6 @@
+{
+    "name": "Rename Media",
+    "package": "rename_media",
+    "homepage": "https://github.com/abdnh/anki-rename-media",
+    "min_point_version": 45
+}
