@@ -1,7 +1,10 @@
 {
     "type": "object",
     "properties": {
-        "foo": {
+        "media_field": {
+            "type": "string"
+        },
+        "filename_field": {
             "type": "string"
         }
     }

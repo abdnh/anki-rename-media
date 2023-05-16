@@ -1,0 +1,2 @@
+-   `media_field`: The field containing media files to rename.
+-   `filename_field`: The field containing the new filename (without an extension).
