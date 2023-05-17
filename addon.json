@@ -2,5 +2,6 @@
     "name": "Rename Media",
     "package": "rename_media",
     "homepage": "https://github.com/abdnh/anki-rename-media",
+    "ankiweb_id": "https://ankiweb.net/shared/info/238174499",
     "min_point_version": 45
 }

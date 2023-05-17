@@ -10,6 +10,10 @@ Currently the add-on doesn't actually rename the files, but duplicates them unde
 
 Different renaming options might be supported in the future.
 
+## Download
+
+You can download the add-on from its AnkiWeb page: https://ankiweb.net/shared/info/238174499
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
