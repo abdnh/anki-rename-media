@@ -4,7 +4,11 @@ Anki add-on to rename media files and update their references in the notes.
 
 Currently the add-on supports renaming media in a given field to names stored in another field. See [config.md](src/config.md) for available options, which can be set from Tools > Add-ons > Config.
 
-Different renaming options will probably be supported in the future.
+The add-on can be accessed from the _Edit > Rename Media_ menu item in the browser.
+This processes all selected notes, renaming media references in the configured field.
+Currently the add-on doesn't actually rename the files, but duplicates them under new names so that it doesn't have to update all their references in your collection. This may change in a future version.
+
+Different renaming options might be supported in the future.
 
 ## Changelog
 
