@@ -32,13 +32,16 @@ def on_rename(browser: Browser) -> None:
         config = mw.addonManager.getConfig(__name__)
         media_field = config["media_field"]
         filename_field = config["filename_field"]
+        filename_prefix = config["filename_prefix"]
+        filename_suffix = config["filename_suffix"]
+
         nids = browser.selected_notes()
         updated_notes = []
         for nid in nids:
             note = col.get_note(nid)
             if media_field not in note or filename_field not in note:
                 continue
-            new_basename = note[filename_field]
+            new_basename = filename_prefix + note[filename_field] + filename_suffix
             if not new_basename:
                 continue
 

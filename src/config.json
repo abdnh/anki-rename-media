@@ -1,4 +1,6 @@
 {
     "media_field": "",
-    "filename_field": ""
+    "filename_field": "",
+    "filename_prefix": "",
+    "filename_suffix": ""
 }
