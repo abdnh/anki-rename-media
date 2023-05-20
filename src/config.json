@@ -1,6 +1,10 @@
 {
-    "media_field": "",
-    "filename_field": "",
-    "filename_prefix": "",
-    "filename_suffix": ""
+    "rename_fields": [
+        {
+            "media_field": "",
+            "filename_field": "",
+            "filename_prefix": "",
+            "filename_suffix": ""
+        }
+    ]
 }

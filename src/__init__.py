@@ -30,26 +30,28 @@ def on_rename(browser: Browser) -> None:
             return match.group(0).replace(fname, new_filename)
 
         config = mw.addonManager.getConfig(__name__)
-        media_field = config["media_field"]
-        filename_field = config["filename_field"]
-        filename_prefix = config["filename_prefix"]
-        filename_suffix = config["filename_suffix"]
+        rename_fields = config["rename_fields"]
 
         nids = browser.selected_notes()
         updated_notes = []
         for nid in nids:
             note = col.get_note(nid)
-            if media_field not in note or filename_field not in note:
-                continue
-            new_basename = filename_prefix + note[filename_field] + filename_suffix
-            if not new_basename:
-                continue
+            for fields in rename_fields:
+                media_field = fields["media_field"]
+                filename_field = fields["filename_field"]
+                filename_prefix = fields["filename_prefix"]
+                filename_suffix = fields["filename_suffix"]
+                if media_field not in note or filename_field not in note:
+                    continue
+                new_basename = filename_prefix + note[filename_field] + filename_suffix
+                if not new_basename:
+                    continue
 
-            note[media_field] = col.media.transform_names(
-                note[media_field],
-                functools.partial(rename_ref, new_basename=new_basename),
-            )
-            updated_notes.append(note)
+                note[media_field] = col.media.transform_names(
+                    note[media_field],
+                    functools.partial(rename_ref, new_basename=new_basename),
+                )
+                updated_notes.append(note)
 
         return OpChangesWithCount(
             changes=col.update_notes(updated_notes), count=len(updated_notes)
