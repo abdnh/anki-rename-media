@@ -11,6 +11,10 @@ try:
     from aqt.browser.browser import Browser
 except ImportError:
     from aqt.browser import Browser
+try:
+    from anki.utils import strip_html
+except ImportError:
+    from anki.utils import stripHTML as strip_html
 
 
 def on_rename(browser: Browser) -> None:
@@ -43,7 +47,9 @@ def on_rename(browser: Browser) -> None:
                 filename_suffix = fields["filename_suffix"]
                 if media_field not in note or filename_field not in note:
                     continue
-                new_basename = filename_prefix + note[filename_field] + filename_suffix
+                new_basename = (
+                    filename_prefix + strip_html(note[filename_field]) + filename_suffix
+                )
                 if not new_basename:
                     continue
 
